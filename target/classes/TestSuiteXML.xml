@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="ePRicerReWrite_TestSuite" parallel = "tests">
+<parameter name="browser" value="FF"/>			
+<listeners>
+      <listener class-name="Tasks.TestReport"/>
+</listeners>
+  	 
+*************************************************************************************************************************
+	Test Execution for Authorization Module	
+*************************************************************************************************************************
+
+<!-- 	<test name="ePricerTest_Authorization">
+		<classes>
+			<class name="TestScripts.AuthorizationScript">
+				<methods>
+						<include name="BrowserCallAuthLogin"/>
+						<include name="AuthProfileScript"/>
+						<include name="AuthUserScript"/>
+						<include name="AuthGroupScript"/>
+						
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+<!-- *************************************************************************************************************************
+	Test Execution for Setting Module 	
+************************************************************************************************************************* -->
+
+	<!--  <test name="ePricerReWrite_Setting">
+		<classes>
+			<class name="TestScripts.SettingScript">
+				<methods>
+					<include name="BrowserCallSettingLogin"/>
+					<include name="QuickCheck"/>
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+
+<!-- *************************************************************************************************************************
+	Test Execution for BP Module
+*************************************************************************************************************************  
+	<parameter name="flow" value="Pcs"/>
+	<test name = "ePricerReWrite_BP">
+	<classes>
+			<class name="TestScripts.BPTestScript">
+				<methods>
+					<include name="BPLaunchTC"/> 
+					<include name="LoginTC"/>
+					<include name="CreateAQuoteTC"/>
+					<exclude name="ManageConfigurationTC"/>
+					<exclude name="AddRemoveManualComponents"/>
+					<exclude name="AssignBackup"/>
+					
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	
+	
+<!-- *************************************************************************************************************************
+	BP Sanity Test cases
+*************************************************************************************************************************  -->
+<!-- 
+ 	
+	<parameter name="env" value="IBMDEV"/>
+ 	<parameter name="flow" value="PSATEM"/>
+	<test name = "ePricerReWrite_BP">
+	<classes>
+			<class name="TestScripts.BPSanityScripts">
+				<methods>
+					<include name="BPLaunchTC"/> 
+					<include name="LoginTC"/> 
+					<include name="SpecialBidSanity"/> 
+				 <include name="ValueSellerSanity"/>   
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+ -->
+
+<!-- *************************************************************************************************************************
+	Test Execution for IBM Module
+*************************************************************************************************************************  -->
+
+//
+<parameter name="env" value="IBM4174"/>
+ 
+<!-- <parameter name="flow" value="IBMNA"/> -->
+
+<test name="ePricerRewrite_IBM">
+		<classes>
+			<class name="TestScripts.IBMSanityScripts">
+				<methods>
+				    	<!-- <include name="getURLs"/> -->
+				    	<!--  <include name="IBMGUILaunchTC"/>-->
+				    	<include name="SanityFlow"/>
+				    	<include name="sendMail"/>
+						<!-- <include name="IBMLoginTC"/>
+						<include name="IBMGUISanity"/> -->
+				</methods>
+			</class>
+		</classes>
+	</test>   
+	
+	
+</suite>
